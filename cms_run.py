@@ -22,7 +22,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from selenium.webdriver.common.action_chains import ActionChains
 
 def cms(wangzhan):  # tt cc是内容、标题的列表
-    df = res('/Volumes/U盘/A20201127/')
+    df = res('/Volumes/U盘/a2020133/')
     tt = df[0]
     cc = df[1]
     # print(str_W_Con)
@@ -47,7 +47,7 @@ def cms(wangzhan):  # tt cc是内容、标题的列表
         res_api = requests.post(url_num, headers=headers, data=Body)  # 接口调用
         resTest = json.loads(res_api.text)
         Test = resTest['data']
-        print(Test)
+        # print(Test)
 
 
         # time.sleep(3)
