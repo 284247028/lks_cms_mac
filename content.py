@@ -4,10 +4,10 @@ import requests
 from config import *
 from methods import *
 
-x = '/Volumes/U盘/1000p_日语/' # 输入文本
+x = '/Volumes/U盘/129/' # 输入文本
 # Today_res = '/Users/lilong/Desktop/123/'
 riyutuurl = '/Users/lilong/Desktop/likeshuo/url.txt'  # 图片
-upan = '/Volumes/U盘/riyu500_/'  # 输出文本
+upan = '/Volumes/U盘/129_/'  # 输出文本
 op_url = open(riyutuurl, encoding='utf-8')
 pool_op_url = list(op_url)
 df = res(x)
@@ -32,13 +32,15 @@ for t,c,tu_url in zip(tt,cc,pool_op_url):
     # 为每个自然段加上<p>
     l_p = []
     for j in range(len(df)):
-        # pi = '<p>' + df[j] + '</p>'
+        pi = '<p>' + df[j] + '</p>'
         # print(pi)
-        strj = df[j].replace('，免费试听课领取入口：https://www.nicekid.com/register/nicekid-jolene', '')
+        strj = pi.replace('，免费试听课领取入口：https://www.nicekid.com/register/nicekid-jolene', '')
         strj = strj.replace('，试听课领取地址：','')
 
         l_p.append(strj)
     l_p.insert(0,url)
+    del (l_p[-1])
+
 
 
     # print(l_p)
@@ -51,5 +53,18 @@ for t,c,tu_url in zip(tt,cc,pool_op_url):
     resTest = json.loads(res_api.text)
     Test = resTest['data']
 
-    Txt_Create(upan, t, Test)
+    t = t.replace('2015', '2020')
+    tt = t.replace('2016','2020')
+    ttt = tt.replace('2017', '2020')
+    tttt = ttt.replace('2018', '2020')
+    ttttt = tttt.replace('2019', '2020')
+
+    Test1 = text.replace('2015', '2020')
+    Test2 = Test1.replace('2016','2020')
+    Test3 = Test2.replace('2017', '2020')
+    Test4 = Test3.replace('2018', '2020')
+    Test5 = Test4.replace('2019', '2020')
+    # print(Test5)
+
+    Txt_Create(upan, ttttt, Test5)
 print('ok')

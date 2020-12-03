@@ -22,7 +22,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from selenium.webdriver.common.action_chains import ActionChains
 
 def cms(wangzhan):  # tt cc是内容、标题的列表
-    df = res('/Volumes/U盘/a2020133/')
+    df = res('/Volumes/U盘/129_/')
     tt = df[0]
     cc = df[1]
     # print(str_W_Con)
@@ -43,10 +43,12 @@ def cms(wangzhan):  # tt cc是内容、标题的列表
     driver.find_element_by_name("sm1").click()  # 登录
     time.sleep(1)
     for title, content in zip(tt, cc):
-        Body = {'txt': content}  # 入参
-        res_api = requests.post(url_num, headers=headers, data=Body)  # 接口调用
-        resTest = json.loads(res_api.text)
-        Test = resTest['data']
+
+
+        # Body = {'txt': content}  # 入参
+        # res_api = requests.post(url_num, headers=headers, data=Body)  # 调用
+        # resTest = json.loads(res_api.text)
+        # Test = resTest['data']
         # print(Test)
 
 
@@ -65,7 +67,7 @@ def cms(wangzhan):  # tt cc是内容、标题的列表
         driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')  # JS控制，window滚动条
         time.sleep(1)
         Ycode = driver.find_element_by_xpath('//*[@id="cke_8"]').click()  # 点击转换源码处
-        driver.find_element_by_xpath('//*[@id="cke_contents_body"]/textarea').send_keys(Test)
+        driver.find_element_by_xpath('//*[@id="cke_contents_body"]/textarea').send_keys(content)
         driver.find_element_by_xpath('/html/body/form/table[6]/tbody/tr/td[2]/input').click()  # 点击提交
         driver.switch_to.parent_frame()
     driver.quit()
