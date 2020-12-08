@@ -90,6 +90,18 @@ def Make_Folers(Target_Path,Dir_Name):
     Target_Link = Target_Path + Dir_Name
     Dir = os.makedirs(Target_Link)
     return Dir
+
+def Make_Folers_url(Target_Link):
+    # all_link = '/Users/lilong/Desktop/in/{}'.format(dir_name)
+    # /Users/lilong/Desktop/
+    # Target_Link = Target_Path + Dir_Name
+    Dir = os.makedirs(Target_Link)
+    return Dir
+
+
+
+
+
 # methods测试##
 def random_sip(val,lsit1):  # 产生新列表，旧列表中插入值在随机位置、不在首尾,适合一维列表。
     lsit2 = [i for i in range(1,len(lsit1))]
