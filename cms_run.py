@@ -24,7 +24,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 u_file = input('请输入文件夹：')
 lanmu = input('请输入栏目：')
 def cms(wangzhan):  # tt cc是内容、标题的列表,u盘文件夹
-    df = res('/Volumes/U盘/{0}/'.format(u_file))
+    df = res('/Volumes/U盘/res/res/{0}/'.format(u_file))
     tt = df[0]
     cc = df[1]
     # print(str_W_Con)
@@ -73,5 +73,4 @@ def cms(wangzhan):  # tt cc是内容、标题的列表,u盘文件夹
     driver.quit()
     print('Tick! The time is: %s' % datetime.now(), 'ok')
 
-
-cms(shkqn_url)
+cms(ymschoolmj_url)
