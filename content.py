@@ -45,13 +45,13 @@ for t,c in zip(tt,cc):
     # 为每个自然段加上<p>
     l_p = []
     for j in range(len(df)):
-        # pi = '<p>' + df[j] + '</p>'
+        pi = '<p>' + df[j] + '</p>'
         # print(pi)
         strj = df[j].replace('，免费试听课领取入口：https://www.nicekid.com/register/nicekid-jolene', '')
         strj1 = strj.replace('，试听课领取地址：','')
 
 
-        l_p.append(strj1)
+        l_p.append(pi)
     l_p.insert(0,url)
     # del (l_p[-1])
 

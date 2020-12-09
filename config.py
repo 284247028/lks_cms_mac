@@ -9,13 +9,21 @@ op_url = open(riyutuurl, encoding='utf-8')
 pool_op_url = list(op_url)
 
 # www.shkqn.com/Little
-bohansd = 'www.bohansd.com/Little '
-shkqn = 'www.shkqn.com/Little '
+isojb = 'www.isojb.net/Little'
+bohansd = 'www.bohansd.com/Little'
+weimin110 = 'www.weimin110.net/Little'
+fygov = 'www.fygov.cn/Little'
+shkqn = 'www.shkqn.com/Little'
 ymschoolmj = 'www.ymschoolmj.com/Little'
 
+
+
+isojb_url = 'http://' + isojb
+bohansd_url = 'http://' + bohansd
+weimin110_url = 'http://' + weimin110
+fygov_url = 'http://' + fygov
 shkqn_url = 'http://' + shkqn
 ymschoolmj_url = 'http://' + ymschoolmj
-bohansd_url = 'http://' + bohansd
 
 
 def select(i):
